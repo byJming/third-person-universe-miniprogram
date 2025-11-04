@@ -1,0 +1,21 @@
+<view class="container">
+  <canvas 
+    type="2d" 
+    id="universe"
+    disable-scroll="true"
+    bindtouchstart="handleTouchStart"
+    bindtouchmove="handleTouchMove"
+    bindtouchend="handleTouchEnd"
+    bindtap="handleClick"
+  ></canvas>
+
+  <view wx:if="{{tooltip.show}}" class="tooltip" style="left: {{tooltip.left}}px; top: {{tooltip.top}}px;">
+    <h4>{{tooltip.name}}</h4>
+    <p><strong>类型：</strong>{{tooltip.type}}</p>
+    <p><strong>描述：</strong>{{tooltip.desc}}</p>
+  </view>
+
+  <view wx:if="{{loading.show}}" class="loading">{{loading.text}}</view>
+
+  <view class="hint">拖拽旋转视角 | 双指缩放 | 点击查看天体详情</view>
+</view>
